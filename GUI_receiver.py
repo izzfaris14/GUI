@@ -5,10 +5,10 @@ from PIL import Image, ImageTk
 # ==========================================
 # THE AI SWITCHBOARD
 # Change this variable to "linus", "farid", or "mock" to test different scripts
-ACTIVE_AI = "linus"
+ACTIVE_AI = "mock"
 # ==========================================
 
-if ACTIVE_AI == "linus":
+if ACTIVE_AI == "mock":
     import linus_ai as ai_engine
 elif ACTIVE_AI == "farid":
     import farid_ai as ai_engine
