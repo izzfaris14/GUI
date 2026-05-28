@@ -42,22 +42,20 @@ class GatekeeperGUI(tk.Tk):
         self.update_frame()
 
     def update_frame(self):
-        # 1. Ask the AI script for the newest annotated picture and text
-        # TOMORROW: frame, text, color = real_script.get_processed_frame()
-        frame, status_text, color = mock_setup.get_processed_frame()
+        # 1. Ask the engine for the newest annotated picture and text
+        # It will seamlessly pull from Linus, Farid, or the mock script based on your switchboard!
+        frame, status_text, color = ai_engine.get_processed_frame()
 
         if frame is not None:
-            # 2. Convert OpenCV format (BGR) to Tkinter format (RGB)
+            # Convert and display...
             cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             img = Image.fromarray(cv2image)
             imgtk = ImageTk.PhotoImage(image=img)
 
-            # 3. Slap the image and the text onto the screen
             self.video_label.imgtk = imgtk
             self.video_label.configure(image=imgtk)
             self.status_label.config(text=status_text, bg=color)
 
-        # 4. Repeat this loop every 10 milliseconds without freezing the app
         self.after(10, self.update_frame)
 
 
