@@ -1,10 +1,19 @@
-# gui_receiver.py
 import tkinter as tk
 import cv2
 from PIL import Image, ImageTk
 
-import mock_setup  # TOMORROW: Change this to import real_script
+# ==========================================
+# THE AI SWITCHBOARD
+# Change this variable to "linus", "farid", or "mock" to test different scripts
+ACTIVE_AI = "linus"
+# ==========================================
 
+if ACTIVE_AI == "linus":
+    import linus_ai as ai_engine
+elif ACTIVE_AI == "farid":
+    import farid_ai as ai_engine
+else:
+    import mock_setup as ai_engine
 
 class GatekeeperGUI(tk.Tk):
     def __init__(self):
