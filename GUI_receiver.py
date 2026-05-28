@@ -48,8 +48,8 @@ class GatekeeperGUI(tk.Tk):
             self.video_label.configure(image=imgtk)
             self.status_label.config(text=status_text, bg=color)
 
-        # 4. Repeat this loop every 15 milliseconds without freezing the app
-        self.after(15, self.update_frame)
+        # 4. Repeat this loop every 10 milliseconds without freezing the app
+        self.after(10, self.update_frame)
 
 
 if __name__ == "__main__":
