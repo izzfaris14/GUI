@@ -8,7 +8,7 @@ from PIL import Image, ImageTk
 ACTIVE_AI = "mock"
 # ==========================================
 
-if ACTIVE_AI == "mock":
+if ACTIVE_AI == "linus":
     import linus_ai as ai_engine
 elif ACTIVE_AI == "farid":
     import farid_ai as ai_engine
