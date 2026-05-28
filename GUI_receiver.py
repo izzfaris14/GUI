@@ -34,8 +34,8 @@ class GatekeeperGUI(tk.Tk):
 
     def update_frame(self):
         # 1. Ask the AI script for the newest annotated picture and text
-        # TOMORROW: frame, text, color = farid_real_script.get_processed_frame()
-        frame, status_text, color = mock_farid.get_processed_frame()
+        # TOMORROW: frame, text, color = real_script.get_processed_frame()
+        frame, status_text, color = mock_setup.get_processed_frame()
 
         if frame is not None:
             # 2. Convert OpenCV format (BGR) to Tkinter format (RGB)
