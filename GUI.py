@@ -9,7 +9,7 @@ def main():
 class Application(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Simple App")
+        self.title("Simple App - Izz's Dev Branch")
 
         self.columnconfigure(0, weight=1)
         self.columnconfigure(1, weight=3)
